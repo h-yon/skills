@@ -1,0 +1,6 @@
+# skill-creator のテスト実行ワークスペース（ephemeral）
+# `<skill-name>-workspace/` という命名規約を前提に一括除外する。
+*-workspace/
+
+# skill の eval 定義は開発側の道具で、配布物には含めない
+evals/
