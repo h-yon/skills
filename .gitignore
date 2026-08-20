@@ -4,3 +4,7 @@
 
 # skill の eval 定義は開発側の道具で、配布物には含めない
 evals/
+
+# コピーした skill など
+cognitive-rhythm-writing/
+japanese-tech-writing/
