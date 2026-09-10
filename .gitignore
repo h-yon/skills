@@ -1,3 +1,5 @@
+.DS_Store
+
 # skill-creator のテスト実行ワークスペース（ephemeral）
 # `<skill-name>-workspace/` という命名規約を前提に一括除外する。
 *-workspace/
