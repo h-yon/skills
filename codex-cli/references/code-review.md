@@ -9,7 +9,7 @@ Distilled from openai/codex-plugin-cc (the official Codex plugin for Claude Code
 - `codex review` — built-in reviewer, human-readable report on stdout. No model/output flags.
 - `codex exec review` — same reviewer with exec plumbing: `-m`, `-o <file>`, `--json`, `--output-schema`, `--ephemeral`. Prefer this when you need to capture or post-process the result.
 - Neither accepts `-C`; run them from inside the target repository.
-- Neither accepts `--sandbox`; the reviewer picks its own sandbox (observed on 0.147.0: `workspace-write [workdir, /tmp, $TMPDIR]`, so a review run is not read-only).
+- Neither accepts `--sandbox`; the reviewer picks its own sandbox (observed on 0.160.1: `read-only`; 0.147.0 used `workspace-write [workdir, /tmp, $TMPDIR]`, so check the `sandbox:` line in the run header when it matters).
 - Custom review instructions go in the positional `[PROMPT]` argument (or stdin via `-`). The plugin deliberately passes no custom text to the standard review and reserves focus text for the adversarial variant — mixing focus text into a standard review dilutes the built-in reviewer's own rubric.
 
 ## Target selection

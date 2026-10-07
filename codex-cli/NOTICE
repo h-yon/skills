@@ -45,4 +45,4 @@ Provenance of the files in this directory:
 
   SKILL.md, references/advanced.md
       Original work, documenting the Codex CLI itself (verified against
-      codex-cli 0.147.0). Not derived from openai/codex-plugin-cc.
+      codex-cli 0.160.1). Not derived from openai/codex-plugin-cc.

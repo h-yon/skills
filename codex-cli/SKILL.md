@@ -7,7 +7,7 @@ description: Delegate coding tasks to OpenAI Codex CLI agent for parallel execut
 
 Run OpenAI Codex CLI from Claude Code to delegate coding tasks to a separate AI agent.
 
-Verified against codex-cli 0.147.0 (2026-08). After a `codex update`, re-check flags with `codex --help` before relying on this document.
+Verified against codex-cli 0.160.1 (2026-10). After a `codex update`, re-check flags with `codex --help` before relying on this document.
 
 ## Quick Start
 
@@ -46,7 +46,7 @@ Primary command for delegating tasks. Key options:
 
 ### `codex review` / `codex exec review` — Code review
 
-Both run the built-in reviewer non-interactively against the current repo (no `-C`; cd into the repo first). Review commands accept no `--sandbox` flag — the reviewer uses its own sandbox (observed on 0.147.0: workspace-write limited to the workdir and /tmp).
+Both run the built-in reviewer non-interactively against the current repo (no `-C`; cd into the repo first). Review commands accept no `--sandbox` flag — the reviewer uses its own sandbox (observed on 0.160.1: read-only; 0.147.0 used workspace-write limited to the workdir and /tmp).
 
 ```bash
 codex review --uncommitted
@@ -109,7 +109,7 @@ Never use `--dangerously-bypass-approvals-and-sandbox`.
 - Always specify `-C <dir>` for `codex exec` (review commands run against the cwd instead)
 - Append the self-execution instruction to the prompt for autonomous operation
 - Use `-o <file>` to capture output; for long runs also `tee` the full stdout/stderr to a non-committed location so a failed parse never forces a paid re-run
-- Leave `-m` unset unless the user asks for a specific model; reasoning effort is `-c model_reasoning_effort="<none|minimal|low|medium|high|xhigh>"`
+- Leave `-m` unset unless the user asks for a specific model; reasoning effort is `-c model_reasoning_effort="<level>"` (supported levels vary by model; see [references/advanced.md](references/advanced.md))
 - For advanced options (profiles, feature flags, web search, local models), see [references/advanced.md](references/advanced.md)
 
 ## License
