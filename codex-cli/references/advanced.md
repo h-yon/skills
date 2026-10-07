@@ -13,9 +13,9 @@ Verified against codex-cli 0.147.0. Flags churn between releases — on parse er
 Use `-c key=value` for inline config overrides (dotted paths for nesting; value parsed as TOML):
 
 ```bash
-codex exec -c model_reasoning_effort="high" "task"
-codex exec -c 'sandbox_permissions=["disk-full-read-access"]' "task"
-codex exec -c shell_environment_policy.inherit=all "task"
+codex exec -c model_reasoning_effort="high" "task" < /dev/null
+codex exec -c 'sandbox_permissions=["disk-full-read-access"]' "task" < /dev/null
+codex exec -c shell_environment_policy.inherit=all "task" < /dev/null
 ```
 
 Reasoning effort values: `none`, `minimal`, `low`, `medium`, `high`, `xhigh`.
@@ -30,14 +30,14 @@ Reasoning effort values: `none`, `minimal`, `low`, `medium`, `high`, `xhigh`.
 `-p <name>` layers `$CODEX_HOME/<name>.config.toml` on top of the base user config (profile-as-file, not a `[profiles]` section):
 
 ```bash
-codex exec -p review "Review this code"    # loads ~/.codex/review.config.toml
+codex exec -p review "Review this code" < /dev/null    # loads ~/.codex/review.config.toml
 ```
 
 ## Structured / machine-readable output
 
 ```bash
-codex exec --output-schema schema.json -o /tmp/result.json "Analyze and return structured results"
-codex exec --json "task" 2>/dev/null | jq .    # JSONL event stream
+codex exec --output-schema schema.json -o /tmp/result.json "Analyze and return structured results" < /dev/null
+codex exec --json "task" < /dev/null 2>/dev/null | jq .    # JSONL event stream
 ```
 
 ## Session Management
@@ -67,14 +67,14 @@ codex apply                                   # git-apply the latest diff produc
 ## Local/OSS Models
 
 ```bash
-codex exec --oss --local-provider ollama "task"    # or lmstudio
+codex exec --oss --local-provider ollama "task" < /dev/null    # or lmstudio
 ```
 
 ## Feature Flags
 
 ```bash
 codex features list                     # inspect available flags and their stability
-codex exec --enable <feature> --disable <feature> "task"
+codex exec --enable <feature> --disable <feature> "task" < /dev/null
 ```
 
 ## Diagnostics

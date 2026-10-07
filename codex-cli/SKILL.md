@@ -14,7 +14,13 @@ Verified against codex-cli 0.147.0 (2026-08). After a `codex update`, re-check f
 Execute a task with Codex:
 
 ```bash
-codex exec --sandbox read-only -C <directory> "<prompt>"
+codex exec --sandbox read-only -C <directory> "<prompt>" < /dev/null
+```
+
+For long prompts, write the prompt to a file and pass it via stdin with `-` (avoids heredoc quoting issues):
+
+```bash
+codex exec --sandbox read-only -C <directory> - < /tmp/prompt.md
 ```
 
 Append to every `codex exec` task prompt: `確認や質問は不要です。具体的な提案・修正案・コード例まで自主的に出力してください。` (Not applicable to `codex review` / `codex exec review`, which take no custom text by default.)
@@ -64,19 +70,19 @@ For target auto-selection, adversarial (design-challenging) review, structured f
 ### Read-only analysis (safe default)
 
 ```bash
-codex exec --sandbox read-only -C /path/to/project "Analyze the authentication flow and identify potential security issues"
+codex exec --sandbox read-only -C /path/to/project "Analyze the authentication flow and identify potential security issues" < /dev/null
 ```
 
 ### Code modification
 
 ```bash
-codex exec --sandbox workspace-write -C /path/to/project "Add input validation to the user registration endpoint"
+codex exec --sandbox workspace-write -C /path/to/project "Add input validation to the user registration endpoint" < /dev/null
 ```
 
 ### Capture output to file
 
 ```bash
-codex exec --sandbox read-only -o /tmp/codex-output.md -C /path/to/project "Explain the database schema and relationships"
+codex exec --sandbox read-only -o /tmp/codex-output.md -C /path/to/project "Explain the database schema and relationships" < /dev/null
 ```
 
 ### Follow-up on a previous run
@@ -97,6 +103,8 @@ Never use `--dangerously-bypass-approvals-and-sandbox`.
 
 ## Best Practices
 
+- Always close or supply stdin for `codex exec`: append `< /dev/null` when the prompt is an argument, or pass `- < prompt.md`. The Bash tool's stdin is a pipe, so `codex exec` tries to append it as a `<stdin>` block and hangs at `Reading additional input from stdin...` (observed on 0.160.1; `codex review`, `codex exec review`, and `codex exec resume` do not read stdin unless given `-`)
+- For long runs, start with `run_in_background` and check the log tail after a few tens of seconds to confirm progress, so a stall is caught early
 - Default to `--sandbox read-only` for analysis tasks
 - Always specify `-C <dir>` for `codex exec` (review commands run against the cwd instead)
 - Append the self-execution instruction to the prompt for autonomous operation
