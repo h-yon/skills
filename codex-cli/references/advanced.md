@@ -2,10 +2,9 @@
 
 Verified against codex-cli 0.160.1. Flags churn between releases — on parse errors, check `codex exec --help` first.
 
-## Removed / renamed flags
+## Approval
 
-- `--full-auto` — removed. Use `--sandbox workspace-write` (exec runs never ask for approval anyway).
-- Approval policy `-a/--ask-for-approval <on-request|never>` exists only on the interactive `codex` command, not on `codex exec` (`untrusted` is no longer a listed value as of 0.160.1).
+- Approval policy `-a/--ask-for-approval <on-request|never>` exists only on the interactive `codex` command, not on `codex exec`.
 - `--approve-for-me` (interactive and `codex exec`) routes approval requests through automatic review with the workspace-write sandbox.
 
 ## Configuration Overrides

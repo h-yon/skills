@@ -42,11 +42,11 @@ Primary command for delegating tasks. Key options:
 | `-i <file>` | Attach image(s) to prompt |
 | `--ephemeral` | Do not persist session files to disk |
 
-`codex exec` never asks for approval; failures are returned to the model. Removed flags: `--full-auto` no longer exists (0.147.0). For write access use `--sandbox workspace-write` directly.
+`codex exec` never asks for approval; failures are returned to the model. For write access use `--sandbox workspace-write`.
 
 ### `codex review` / `codex exec review` — Code review
 
-Both run the built-in reviewer non-interactively against the current repo (no `-C`; cd into the repo first). Review commands accept no `--sandbox` flag — the reviewer uses its own sandbox (observed on 0.160.1: read-only; 0.147.0 used workspace-write limited to the workdir and /tmp).
+Both run the built-in reviewer non-interactively against the current repo (no `-C`; cd into the repo first). Review commands accept no `--sandbox` flag — the reviewer uses its own sandbox (read-only).
 
 ```bash
 codex review --uncommitted
@@ -103,7 +103,7 @@ Never use `--dangerously-bypass-approvals-and-sandbox`.
 
 ## Best Practices
 
-- Always close or supply stdin for `codex exec`: append `< /dev/null` when the prompt is an argument, or pass `- < prompt.md`. The Bash tool's stdin is a pipe, so `codex exec` tries to append it as a `<stdin>` block and hangs at `Reading additional input from stdin...` (observed on 0.160.1; `codex review`, `codex exec review`, and `codex exec resume` do not read stdin unless given `-`)
+- Always close or supply stdin for `codex exec`: append `< /dev/null` when the prompt is an argument, or pass `- < prompt.md`. The Bash tool's stdin is a pipe, so `codex exec` tries to append it as a `<stdin>` block and hangs at `Reading additional input from stdin...` (`codex review`, `codex exec review`, and `codex exec resume` do not read stdin unless given `-`)
 - For long runs, start with `run_in_background` and check the log tail after a few tens of seconds to confirm progress, so a stall is caught early
 - Default to `--sandbox read-only` for analysis tasks
 - Always specify `-C <dir>` for `codex exec` (review commands run against the cwd instead)
