@@ -269,3 +269,6 @@ LLM は、日本語として存在しない言い回しを、次の三つの経�
 
 - 文章規範の各節は、k16shikano の gist「日本語技術文書の文章規範」（Unlicense）を元にしている。 https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d
 - 「生成残渣の除去」「推敲時の点検」「出力の作法」は、kotek-7/dotfiles の sanitize-artifacts から着想を得て、表現と例を独立に書き起こした。原典にライセンス表記はない。 https://github.com/kotek-7/dotfiles/blob/main/dot_agents/skills/sanitize-artifacts/SKILL.md
+- 比喩動詞と術語の直訳の語彙、話し言葉の範囲、擬人化の境界、含みを残す規則、定型の導入と結び、数の宣言、目的や理由の切り出し、間を作るだけの読点、太字の表示、補助動詞と形式名詞の表記は、nanaism/yomiyasu（MIT）を参考にし、文面と例文はこの文書の粒度で書き起こした。 https://github.com/nanaism/yomiyasu
+- 英語に訳し戻す判定、エンジニアの話し言葉と定着の判定基準、チャットの返答の名残、先回りの打ち消し、動作の名詞化、条件の消えた結論、二重否定と条件の入れ子、同じ型の反復、演出の語の外し方は、coji/natural-japanese（MIT）を参考にし、同様に書き起こした。 https://github.com/coji/natural-japanese
+- 両者の著作権表示と許諾表示は、リポジトリの THIRD-PARTY-NOTICES.md にある。
