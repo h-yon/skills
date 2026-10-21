@@ -11,12 +11,45 @@
 | nanaism/yomiyasu https://github.com/nanaism/yomiyasu | 比喩動詞と術語の直訳の語彙、話し言葉の範囲、擬人化の境界、言い換えで含みを残す規則、定型の導入と結び、数の宣言、「〜ためです」の切り出し、間を作るだけの読点、太字が表示されない書き方、補助動詞と形式名詞の表記 | 規則を参考にし、文面と例文はこの skill の粒度で書き起こした | MIT（Copyright (c) 2026 nanaism） |
 | coji/natural-japanese https://github.com/coji/natural-japanese | 英語に訳し戻す判定、エンジニアの話し言葉と定着の判定基準、チャット応答の名残、先回りの打ち消し、動作の名詞化、条件の消えた結論、二重否定と条件の入れ子、同じ型の反復、演出語は削るだけにする規則 | 規則を参考にし、文面と例文はこの skill の粒度で書き起こした | MIT（Copyright (c) 2026 coji） |
 
-## MIT ライセンスの表示
+## ライセンスの全文
 
-yomiyasu と natural-japanese の著作権表示と許諾表示を、原文のまま記す。
+出典ごとに、その出典が配布している LICENSE ファイルを原文のまま記す。
+
+### nanaism/yomiyasu
+
+https://github.com/nanaism/yomiyasu/blob/main/LICENSE
 
 ```
+MIT License
+
 Copyright (c) 2026 nanaism
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### coji/natural-japanese
+
+https://github.com/coji/natural-japanese/blob/main/LICENSE
+
+```
+MIT License
+
 Copyright (c) 2026 coji
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
