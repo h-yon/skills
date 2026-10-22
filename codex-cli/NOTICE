@@ -1,6 +1,9 @@
 codex-cli skill
 Copyright 2026 Hibiki Yonahara
 
+This skill as a whole is licensed under the Apache License, Version 2.0.
+The full license text is included in this directory as LICENSE.
+
 This skill contains material derived from the Codex plugin for Claude Code
 (openai/codex-plugin-cc, https://github.com/openai/codex-plugin-cc), which is
 licensed under the Apache License, Version 2.0. A copy of that license is

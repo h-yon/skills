@@ -1,6 +1,7 @@
 ---
 name: codex-cli
 description: Delegate coding tasks to OpenAI Codex CLI agent for parallel execution. Use when the user asks to run Codex, use Codex for code analysis, code review, adversarial review, bug investigation, refactoring suggestions, or architecture analysis. Also use when the user wants a second opinion from another AI agent, or wants to offload a task to Codex. Triggers on mentions of "codex", "/codex", or requests to delegate work to Codex CLI.
+license: Apache-2.0
 ---
 
 # Codex CLI

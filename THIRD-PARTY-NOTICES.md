@@ -1,6 +1,16 @@
 # 出典と第三者の権利表示
 
-このリポジトリの skill が元にした資料と、そのライセンスの扱いを記す。出典のある skill は SKILL.md の末尾に「出典」の節を置き、その節はこの一覧の要約である。
+このリポジトリの skill が元にした資料と、そのライセンスの扱いを記す。出典のある skill は SKILL.md にも出典を記し、その記述はこの一覧の要約である。
+
+## ライセンス
+
+リポジトリの既定のライセンスは MIT（リポジトリ直下の LICENSE）である。codex-cli/ は openai/codex-plugin-cc 由来の資料を含むため Apache License 2.0 で提供し、同ディレクトリの LICENSE（全文）と NOTICE（帰属とファイルごとの由来）に従う。
+
+## codex-cli
+
+| 出典 | 取り込んだもの | 取り込み方 | ライセンス |
+|---|---|---|---|
+| openai/codex-plugin-cc https://github.com/openai/codex-plugin-cc | adversarial review のプロンプトと review 出力のスキーマ（無改変の写し）、review の作業手順（Codex CLI の呼び出しとして書き直した派生物） | ファイルごとの由来と改変の有無は codex-cli/NOTICE に記す | Apache-2.0（Copyright 2026 OpenAI） |
 
 ## japanese-refinement
 
