@@ -6,7 +6,6 @@ Claude Code と Codex CLI で使う Agent Skills。
 |---|---|
 | codex-cli | Codex CLI にコーディング作業やレビューを委任する |
 | japanese-refinement | 日本語文書の執筆と推敲の規範 |
-| stage-by-concern | 作業ツリーの変更を関心ごとに分けて staging する |
 
 ## ライセンス
 
