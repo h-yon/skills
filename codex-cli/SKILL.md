@@ -112,7 +112,7 @@ Never use `--dangerously-bypass-approvals-and-sandbox`.
 - Always specify `-C <dir>` for `codex exec` (review commands run against the cwd instead)
 - Append the self-execution instruction to the prompt for autonomous operation
 - Use `-o <file>` to capture output; for long runs also `tee` the full stdout/stderr to a non-committed location so a failed parse never forces a paid re-run
-- If the `-o` file is missing after the run, read the log before anything else: Codex may have stopped before starting. A pipe such as `| tee` reports `tee`'s exit code (0), not Codex's
+- If the `-o` file is missing after the run, read the log before anything else: Codex may have stopped before starting
 - Leave `-m` unset unless the user asks for a specific model; reasoning effort is `-c model_reasoning_effort="<level>"` (supported levels vary by model; see [references/advanced.md](references/advanced.md))
 - For advanced options (profiles, feature flags, web search, local models), see [references/advanced.md](references/advanced.md)
 
