@@ -24,6 +24,8 @@ For long prompts, write the prompt to a file and pass it via stdin with `-` (avo
 codex exec --sandbox read-only -C <directory> - < /tmp/prompt.md
 ```
 
+`<directory>` must be inside a git repository; otherwise `codex exec` exits 1 with `Not inside a trusted directory and --skip-git-repo-check was not specified.` before running anything. To let Codex read several repositories, pass their parent folder and add `--skip-git-repo-check` (keep `--sandbox read-only`; outside a repo there is no git history to undo writes). For a single repository, pass the repository itself.
+
 Append to every `codex exec` task prompt: `確認や質問は不要です。具体的な提案・修正案・コード例まで自主的に出力してください。` (Not applicable to `codex review` / `codex exec review`, which take no custom text by default.)
 
 ## Commands
@@ -110,6 +112,7 @@ Never use `--dangerously-bypass-approvals-and-sandbox`.
 - Always specify `-C <dir>` for `codex exec` (review commands run against the cwd instead)
 - Append the self-execution instruction to the prompt for autonomous operation
 - Use `-o <file>` to capture output; for long runs also `tee` the full stdout/stderr to a non-committed location so a failed parse never forces a paid re-run
+- If the `-o` file is missing after the run, read the log before anything else: Codex may have stopped before starting. A pipe such as `| tee` reports `tee`'s exit code (0), not Codex's
 - Leave `-m` unset unless the user asks for a specific model; reasoning effort is `-c model_reasoning_effort="<level>"` (supported levels vary by model; see [references/advanced.md](references/advanced.md))
 - For advanced options (profiles, feature flags, web search, local models), see [references/advanced.md](references/advanced.md)
 
